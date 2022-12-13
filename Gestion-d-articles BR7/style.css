@@ -75,6 +75,9 @@ button:hover {
 #promotion label {
     margin-left: 5%;
 }
+#promotion label:hover {
+    color: #660b91;
+}
 #promotion input {
     height: 12px;
 }
