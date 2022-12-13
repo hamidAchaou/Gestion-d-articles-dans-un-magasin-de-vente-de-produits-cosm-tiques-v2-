@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 * {
     scroll-behavior: smooth;
     box-sizing: border-box;
@@ -11,6 +12,8 @@ body {
     background-color: rgb(4, 16, 58);
     font-family: sans-serif;
     color: #fff;
+    text-transform: capitalize;
+
 }
 main {
     width: 80%;
@@ -18,12 +21,20 @@ main {
     /* display: flex;
     gap: 2%; */
 }
+form {
+    width: 100%;
+}
 h2 {
     font-weight: bold;
     margin-top: 4%;
+    text-align: center;
+}
+h5 {
+    margin-bottom: 14px;
+    text-align: center;
 }
 p {
-    margin-bottom: 14px;
+    margin-bottom: 2%;
 }
 #inpPro input,
 #count {
@@ -57,7 +68,13 @@ button:hover {
     background-color: #660b91;
     letter-spacing: 1px;
 }
-
+#promotion {
+    margin-top: 3%;
+    font-weight: 700;
+}
+#promotion label {
+    margin-left: 5%;
+}
 #promotion input {
     height: 12px;
 }
@@ -99,18 +116,15 @@ table tbody tr:last-of-type {
 #infosdetailes {
     display: none;
     position: fixed;
-    top: 265px;
-    left: 35%;
-    border-radius: 6px;
-    height: 340px;
-    margin-bottom: 10%;
-    width: 28%;
+    top: 123px;
+    left: 21%;
+    height: 383px;
+    width: 51%;
     background-color: rgb(1, 30, 125);
     text-align: center;
-    /* color: ; */
 }
 #infosdetailes p {
-    margin-top: 20px;
+    margin-top: 3%;
 }
 .detail-button button {
     background-color: rgb(97, 161, 0);
@@ -124,11 +138,11 @@ table tbody tr:last-of-type {
 #confirmation {
     display: none;
     position: fixed;
-    top: 268px;
-    left: 35%;
+    top: 150px;
+    left: 15%;
     z-index: 999;
-    width: 500px;
-    height: 200px;
+    width: 600px;
+    height: 300px;
     background-color: #009879;
     padding: 3%;
 }
@@ -155,6 +169,7 @@ table tbody tr:last-of-type {
 
 #btn-conf #cancel:hover {
     background-color: #390053;
+    border-radius: 16px;
 }
 /* style Button edite and delet */
 #btn-edit {
@@ -163,6 +178,7 @@ table tbody tr:last-of-type {
 }
 #btn-delet {
     background-color: red;
+    border-radius: 16px;
 }
 #btn-delet:hover {
     /* background-color: #310044; */

@@ -65,38 +65,7 @@ create.addEventListener("click", (e) => {
   e.preventDefault();
 
   msgArr.length = 0;
-  // Validation Name
-  if (regNam.test(name.value) === false) {
-    resultName.innerHTML = "seules les lettres sont autorisees";
-    resultName.style.color = "red";
-  } else {
-    resultName.innerHTML = "";
-    msgArr.push(true);
-  }
-  // Validation marque
-  if (regNam.test(marque.value) === false) {
-    resultMarque.innerHTML = "seules les lettres sont autorisees";
-    resultMarque.style.color = "red";
-  } else {
-    resultMarque.innerHTML = "";
-    msgArr.push(true);
-  }
-  // Validation price
-  if (price.value === "") {
-    resultPrix.innerHTML = "seules les lettres sont autorisees";
-    resultPrix.style.color = "red";
-  } else {
-    resultPrix.innerHTML = "";
-    msgArr.push(true);
-  }
-  // Validation date
-  if (date.value === "") {
-    resultdate.innerHTML = "seules les lettres sont autorisees";
-    resultdate.style.color = "red";
-  } else {
-    resultdate.innerHTML = "";
-    msgArr.push(true);
-  }
+  validInp()
   // create Object Product
   let productOne = new Article(
     titele.value,
@@ -106,7 +75,7 @@ create.addEventListener("click", (e) => {
     type.value,
     promotion.value
   );
-
+// Validation and create one element or more and adding an element after modifying it
   if (msgArr.length === 4) {
     if (mode === "createPro") {
       if (count.value > 1) {
@@ -134,6 +103,7 @@ create.addEventListener("click", (e) => {
       top: 0,
     });
   }
+  // sort element
   arr.sort((a, b) => a.titele.localeCompare(b.titele));
   // append in Locale storage
   localStorage.setItem("product", JSON.stringify(arr));
@@ -154,7 +124,7 @@ function showData() {
             <th>${i}</th>
             <th>${arr[i].titele}</th>
             <th>${arr[i].marque}</th>
-            <th>${arr[i].price}</th>
+            <th>${arr[i].price}$</th>
             <th>${arr[i].date}</th>
             <th>${arr[i].type}</th>
             <th>${arr[i].promotion}</th>
@@ -223,4 +193,39 @@ function update(i) {
   scroll({
     top: 0,
   });
+}
+// function validation input
+function validInp() {
+    // Validation Name
+    if (regNam.test(name.value) === false) {
+      resultName.innerHTML = "seules les lettres sont autorisees";
+      resultName.style.color = "red";
+    } else {
+      resultName.innerHTML = "";
+      msgArr.push(true);
+    }
+    // Validation marque
+    if (regNam.test(marque.value) === false) {
+      resultMarque.innerHTML = "seules les lettres sont autorisees";
+      resultMarque.style.color = "red";
+    } else {
+      resultMarque.innerHTML = "";
+      msgArr.push(true);
+    }
+    // Validation price
+    if (price.value === "") {
+      resultPrix.innerHTML = "seules les lettres sont autorisees";
+      resultPrix.style.color = "red";
+    } else {
+      resultPrix.innerHTML = "";
+      msgArr.push(true);
+    }
+    // Validation date
+    if (date.value === "") {
+      resultdate.innerHTML = "seules les lettres sont autorisees";
+      resultdate.style.color = "red";
+    } else {
+      resultdate.innerHTML = "";
+      msgArr.push(true);
+    }
 }
