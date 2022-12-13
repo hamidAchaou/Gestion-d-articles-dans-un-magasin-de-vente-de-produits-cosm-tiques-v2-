@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Library Font Awesom -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Brief 7</title>
+</head>
+<body>
+    <main>
+        <form>
+            <h2>Mgazin</h2>
+            <p>Add your product here</p>
+            <div id="inpPro">
+                <label for="name">name:
+                    <input type="text" id="name" placeholder="name">
+                </label>
+                <p id="resultName"></p>
+                <label for="marque">marque: 
+                    <input type="text" placeholder="marque" id="marque">
+                </label>
+                <p id="resultMarque"></p>
+                <label for="price ">price: 
+                    <input type="number" placeholder="price" id="price" min="0">
+                </label>
+                <p id="resultPrix"></p>
+                <label for="date ">date: 
+                    <input type="date" placeholder="date" id="date">
+                </label>
+                <p id="resultdate"></p>
+            </div>
+
+            <label class="labelhood" for="optionss">Type: </label>
+            <select name="type" id="typ-pro">
+                <option value="hygiène et toilette">hygiène et toilette</option>
+                <option value="soins esthétiques">soins esthétiques</option>
+                <option value="produits solaires">produits solaires</option>
+                <option value="beauté des mains et des pieds">beauté des mains et des pieds</option>
+                <option value="produits de maquillage">produits de maquillage</option>
+                <option value="entretien capillaires">entretien capillaires</option>
+                <option value="parfums">parfums</option>
+            </select>
+            <div id="promotion">promotion:
+                <label>oui<input type="radio" name="promotion" value="oui" checked></label>
+                <label>Non<input type="radio" name="promotion" value="non"></label>
+            </div>
+            <input type="number" id="count" placeholder="count">
+            <button type="submit" id="create">CREATE</button>
+        </form>
+<!-- delet All Product -->
+        <div id="delet-All">
+        </div> 
+<!-- table-->
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>marque</th>
+                    <th>price</th>
+                    <th>date</th>
+                    <th>type</th>
+                    <th>promotion</th>
+                    <th>edit</th>
+                    <th>delete</th>
+                    <th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            
+            </tbody>
+            <tbody></tbody>
+        </table>
+        <div id="infosdetailes">
+            <p> Here is all informations related to your product</p>
+            <div id="details">
+            </div>      
+            <div class="detail-button">
+                <button onclick="hidedetails()" type="button2">ok</button>
+            </div>
+        </div> 
+        <div id="confirmation">
+            <h2>are you sure you want to delete your product?</h2>
+            <div id="btn-conf">
+                <button id="cancel">cancel</button>
+                <button id="deletePro">delete</button>
+            </div>
+        </div>
+    </main>
+
+<!-- link js -->
+    <script src="script.js"></script>
+</body>
+</html>
