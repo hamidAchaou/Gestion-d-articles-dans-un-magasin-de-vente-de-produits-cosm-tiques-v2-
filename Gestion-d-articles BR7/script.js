@@ -11,7 +11,6 @@ let create = document.getElementById(`create`);
 let details = document.getElementById("infosdetailes");
 let divDetails = document.getElementById("details");
 // message error
-let name = document.getElementById("name");
 let resultName = document.getElementById("resultName");
 let resultMarque = document.getElementById("resultMarque");
 let resultPrix = document.getElementById("resultPrix");
@@ -38,7 +37,7 @@ class Article {
     return `
     <p>Nom: ${titele.value}</p>
     <p>marque: ${marque.value}</p> 
-    <p>price: ${price.value}</p>
+    <p>price: ${price.value} DH</p>
     <p>date: ${date.value}</p> 
     <p>type: ${type.value}</p> 
     <p>promotion: ${promotion.value}</p>
@@ -77,6 +76,10 @@ create.addEventListener("click", (e) => {
   );
 // Validation and create one element or more and adding an element after modifying it
   if (msgArr.length === 4) {
+    let titelMg =document.getElementById("titelMg");
+    titelMg.style.display = "block"
+    let titelAdd =document.getElementById("titelAdd");
+    titelAdd.style.display = "block"
     if (mode === "createPro") {
       if (count.value > 1) {
         for (let i = 0; i < count.value; i++) {
@@ -98,7 +101,11 @@ create.addEventListener("click", (e) => {
     clearInput();
     }
   } else {
-    console.log("no");
+    let titelMg =document.getElementById("titelMg");
+    titelMg.style.display = "none"
+    let titelAdd =document.getElementById("titelAdd");
+    titelAdd.style.display = "none"
+
     scroll({
       top: 0,
     });
@@ -124,7 +131,7 @@ function showData() {
             <th>${i}</th>
             <th>${arr[i].titele}</th>
             <th>${arr[i].marque}</th>
-            <th>${arr[i].price}$</th>
+            <th>${arr[i].price} DH</th>
             <th>${arr[i].date}</th>
             <th>${arr[i].type}</th>
             <th>${arr[i].promotion}</th>
@@ -197,10 +204,12 @@ function update(i) {
 // function validation input
 function validInp() {
     // Validation Name
-    if (regNam.test(name.value) === false) {
+    if (regNam.test(titele.value) === false) {
       resultName.innerHTML = "seules les lettres sont autorisees";
       resultName.style.color = "red";
+      titele.style.border = "1px solid red";
     } else {
+      titele.style.border = "none";
       resultName.innerHTML = "";
       msgArr.push(true);
     }
@@ -208,15 +217,19 @@ function validInp() {
     if (regNam.test(marque.value) === false) {
       resultMarque.innerHTML = "seules les lettres sont autorisees";
       resultMarque.style.color = "red";
+      marque.style.border = "1px solid red";
     } else {
+      marque.style.border = "none";
       resultMarque.innerHTML = "";
       msgArr.push(true);
     }
     // Validation price
     if (price.value === "") {
       resultPrix.innerHTML = "seules les lettres sont autorisees";
-      resultPrix.style.color = "red";
+      resultMarque.style.border = "red";
+      price.style.border = "1px solid red";
     } else {
+      price.style.border = "none";
       resultPrix.innerHTML = "";
       msgArr.push(true);
     }
@@ -224,7 +237,11 @@ function validInp() {
     if (date.value === "") {
       resultdate.innerHTML = "seules les lettres sont autorisees";
       resultdate.style.color = "red";
+      date.style.color = "red";
+      date.style.border = "1px solid red";
     } else {
+      date.style.border = "none";
+      date.style.color = "#fff";
       resultdate.innerHTML = "";
       msgArr.push(true);
     }
