@@ -43,6 +43,10 @@ h5 {
     margin-bottom: 14px;
     text-align: center;
 }
+label {
+    font-weight: 700;
+    font-size: 18px;
+}
 
 #inpPro input,
 #count {
@@ -83,6 +87,8 @@ button:hover {
 }
 #promotion label {
     margin-left: 5%;
+    font-weight: 700;
+    font-size: 18px;
 }
 #promotion label:hover {
     color: #660b91;
@@ -90,11 +96,26 @@ button:hover {
 #promotion input {
     height: 12px;
 }
+
+/* style type */
+#typ-pro  {
+    width: 30%;
+    height: 27px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+#typ-pro option {
+    padding-bottom: 2%;
+    text-align: center;
+}
+#typ-pro option:hover {
+    background-color: #660b91;
+}
 /* 
     Style Table
 */
 table {
-    max-width: 53%;
     border-collapse: collapse;
     /* margin: 25px auto; */
     margin-left: 33%;
